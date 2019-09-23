@@ -1,8 +1,8 @@
 package com.example.uportal.controllers;
 
+import com.example.uportal.models.MyUser;
 import com.example.uportal.models.MyUserDetails;
 import com.example.uportal.models.Role;
-import com.example.uportal.models.User;
 import com.example.uportal.repositories.MyUserRepository;
 import com.example.uportal.repositories.MyRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +51,7 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/registeruser", method = RequestMethod.POST)
-    public String registeruser(@ModelAttribute("userFormData") @Valid User formData, BindingResult
+    public String registeruser(@ModelAttribute("userFormData") @Valid MyUser formData, BindingResult
             bindingResult, ModelMap model) throws ParseException {
 
         if (bindingResult.hasErrors()) {
@@ -95,7 +95,7 @@ public class HomeController {
         boolean passMatched = passwordEncoder.matches(password, userDetails.getPassword());
 
         if (passMatched){
-            User user = userDetails.getUser();
+            MyUser user = userDetails.getUser();
             user.setPassword(passwordEncoder.encode(newPassword));
             myUserRepository.save(user);
         }
@@ -128,7 +128,7 @@ public class HomeController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         MyUserDetails userDetails = (MyUserDetails)auth.getPrincipal();
 
-        List<User> users = myUserRepository.findAll();
+        List<MyUser> users = myUserRepository.findAll();
 
         model.addAttribute("user", userDetails.getUser());
         model.addAttribute("users", users);
