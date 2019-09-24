@@ -25,7 +25,7 @@
             <div class="error">${SPRING_SECURITY_LAST_EXCEPTION.message}</div>
                 <div class="form-group">
                     <label for="username" class="text-center d-block"> Email Address</label>
-                    <input class="form-control" type="text" placeholder="" id="username" name='username'/>
+                    <input class="form-control" type="email" placeholder="" id="username" name='username'/>
                 </div>
                 <div class="form-group">
                     <label for="password" class="text-center d-block"> Password</label>

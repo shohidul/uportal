@@ -61,7 +61,7 @@
                     <div class="col-sm-8">
                         <form:errors path = "email" cssClass = "error"/>
                         <div id="emailError"></div>
-                        <input class="form-control" type="text" placeholder="" id="username" name='email'/>
+                        <input class="form-control" type="email" placeholder="" id="username" name='email'/>
                     </div>
                 </div>
                 <div class="form-group row">
