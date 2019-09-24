@@ -15,7 +15,7 @@ public class MyUserDetails implements UserDetails {
     private String password;
     private String firstName;
     private String lastName;
-    private User user;
+    private MyUser user;
 //    private boolean active;
 
     private List<GrantedAuthority> authorities;
@@ -23,7 +23,7 @@ public class MyUserDetails implements UserDetails {
     public MyUserDetails() {
     }
 
-    public MyUserDetails(User user) {
+    public MyUserDetails(MyUser user) {
         this.user = user;
         this.email = user.getEmail();
         this.password = user.getPassword();
@@ -70,7 +70,7 @@ public class MyUserDetails implements UserDetails {
         return true;
     }
 
-    public User getUser() {
+    public MyUser getUser() {
         return user;
     }
 }

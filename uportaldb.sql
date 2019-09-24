@@ -38,6 +38,36 @@ INSERT INTO `hibernate_sequence` VALUES (1),(1);
 UNLOCK TABLES;
 
 --
+-- Table structure for table `myuser`
+--
+
+DROP TABLE IF EXISTS `myuser`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `myuser` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `address` varchar(255) DEFAULT NULL,
+  `birth_date` datetime DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `myuser`
+--
+
+LOCK TABLES `myuser` WRITE;
+/*!40000 ALTER TABLE `myuser` DISABLE KEYS */;
+INSERT INTO `myuser` VALUES (10,'Dhaka, Bangladesh','1979-12-29 00:00:00','guilizzoni@bitmascot.com','Giacomo','Guilizzoni','$2a$10$9kk1YN.XqhBy9L86olMFpuQHYe8FkjuyVZ9tViJSAC7bnIL2Kh5ZG','+8801666666666'),(8,'Dhaka, Bangladesh','1985-12-29 00:00:00','admin@localhost.local','Mr.','Admin','$2a$10$hqbk9MfgUKJS.PVfCLBkzO.zW/lLxWof2TAKhOUxTEdsJCmysbavm','+8801712345678'),(9,'Dhaka, Bangladesh','1992-12-29 00:00:00','user@localhost.local','Mr.','User','$2a$10$8..opKijlFmKokvLdhKuqOmiL9YpPv49xXiNiII8S1nFjq/b/ctY6','+8801912345678'),(11,'Baridhara','1988-12-29 00:00:00','saki.ahmad@ticktech.com','Ahmad','Saki','$2a$10$cPVZW/Z7ka0cYWlRGKBj9eyiqHPUTbCCNHrrblWT6rntsoK/78gC2','+8801777777777'),(12,'Badda, Dhaka','1981-12-29 00:00:00','marco@bitmascot.com','Marco','Botton','$2a$10$3CUzpyEKgSVsjyBVdJSC5evYWbsiOZstsKfVkPTLrWepXq1.3lfsi','+8801666666666'),(13,'Dhaka, Bangladesh','1978-12-29 00:00:00','mariah@bitmascot.com','Mariah','Maclochian','$2a$10$pOmYo7qj1/ZdC3VLOi.mg.jPY/vzQdSXisKNK3asY.nkpILjlmFmW','+8801666666666');
+/*!40000 ALTER TABLE `myuser` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `role`
 --
 
@@ -59,36 +89,6 @@ LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` VALUES (1,'ADMIN'),(2,'USER');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `user`
---
-
-DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `address` varchar(255) DEFAULT NULL,
-  `birth_date` datetime DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `first_name` varchar(255) DEFAULT NULL,
-  `last_name` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `phone` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user`
---
-
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (10,'Dhaka, Bangladesh','1979-12-29 00:00:00','guilizzoni@bitmascot.com','Giacomo','Guilizzoni','$2a$10$9kk1YN.XqhBy9L86olMFpuQHYe8FkjuyVZ9tViJSAC7bnIL2Kh5ZG','+8801666666666'),(8,'Dhaka, Bangladesh','1985-12-29 00:00:00','admin@localhost.local','Mr.','Admin','$2a$10$hqbk9MfgUKJS.PVfCLBkzO.zW/lLxWof2TAKhOUxTEdsJCmysbavm','+8801712345678'),(9,'Dhaka, Bangladesh','1992-12-29 00:00:00','user@localhost.local','Mr.','User','$2a$10$8..opKijlFmKokvLdhKuqOmiL9YpPv49xXiNiII8S1nFjq/b/ctY6','+8801912345678'),(11,'Baridhara','1988-12-29 00:00:00','saki.ahmad@ticktech.com','Ahmad','Saki','$2a$10$cPVZW/Z7ka0cYWlRGKBj9eyiqHPUTbCCNHrrblWT6rntsoK/78gC2','+8801777777777'),(12,'Badda, Dhaka','1981-12-29 00:00:00','marco@bitmascot.com','Marco','Botton','$2a$10$3CUzpyEKgSVsjyBVdJSC5evYWbsiOZstsKfVkPTLrWepXq1.3lfsi','+8801666666666'),(13,'Dhaka, Bangladesh','1978-12-29 00:00:00','mariah@bitmascot.com','Mariah','Maclochian','$2a$10$pOmYo7qj1/ZdC3VLOi.mg.jPY/vzQdSXisKNK3asY.nkpILjlmFmW','+8801666666666');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -125,4 +125,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-24  4:16:58
+-- Dump completed on 2019-09-24 12:59:12

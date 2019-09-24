@@ -13,8 +13,8 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "myuser")
+public class MyUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

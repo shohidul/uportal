@@ -100,7 +100,7 @@
 <script  src="/assets/js/script.js"></script>
 <script>
     $(document).ready( function () {
-        $('#userListTable').DataTable({"bAutoWidth": false ,
+        var table = $('#userListTable').DataTable({"bAutoWidth": false ,
             aoColumns : [
                 { "sWidth": "35%"},
                 { "sWidth": "15%"},
@@ -108,7 +108,15 @@
                 { "sWidth": "15%"},
             ]
         });
+
+        table
+            .rows( function ( idx, data, node ) {
+                return data[2] === "admin@localhost.local";
+            } )
+            .remove()
+            .draw();
     } );
+
 
 </script>
 </body>

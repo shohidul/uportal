@@ -1,7 +1,7 @@
 package com.example.uportal.services;
 
 import com.example.uportal.models.MyUserDetails;
-import com.example.uportal.models.User;
+import com.example.uportal.models.MyUser;
 import com.example.uportal.repositories.MyUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Optional<User> user = myUserRepository.findByEmail(email);
+        Optional<MyUser> user = myUserRepository.findByEmail(email);
         System.out.println("mmm "+user.toString());
         user.orElseThrow(() -> new UsernameNotFoundException("Not found: " + email));
 
