@@ -15,10 +15,10 @@
 <body>
 <!-- partial:index.partial.html -->
 <div class="container">
-    <div class="refister-page">
+    <div class="register-page">
         <img class="w-50 d-block" src="/assets/img/uportal_logo.png" alt="">
         <h5 class="form-title text-center">Registration Panel</h5>
-        <form:form class="refister-form card" action="registeruser" method='POST' modelAttribute="userFormData">
+        <form:form class="register-form card" action="registeruser" method='POST' modelAttribute="userFormData">
             <%--<form:errors path = "*" cssClass = "errorblock" element = "div" />--%>
             <%--${SPRING_SECURITY_LAST_EXCEPTION.message}--%>
                 <div class="form-group row">
@@ -72,8 +72,8 @@
                     </div>
                 </div>
 
-            <div class="refister-btns">
-                <button class="btn btn-primary" name="submit" type="submit" id="refister-btn">Refister</button>
+            <div class="register-btns">
+                <button class="btn btn-primary" name="submit" type="submit" id="register-btn">Register</button>
                 <a class="btn btn-light u-clr-btn" href="/login">Cancel</a>
             </div>
 
@@ -94,23 +94,23 @@
         padding: 8px;
         margin: 16px;
     }
-    .refister-page{
+    .register-page{
         max-width: 450px;
         margin: auto;
     }
-    .refister-page > *{
+    .register-page > *{
         margin: 20px auto;
     }
-    .refister-form{
+    .register-form{
         padding: 20px;
         /*text-align: center;*/
     }
-    .refister-btns{
+    .register-btns{
         display: flex;
         margin: 35px auto 20px auto;
         width: 80%;
     }
-    .refister-btns > *{
+    .register-btns > *{
         margin: 0 auto;
         width: 30%;
     }
@@ -144,10 +144,10 @@
                             if(response == true){
                                 $('#emailError').show();
                                 $("#emailError").html("Email already exist!").css("color", "red");
-                                $("#refister-btn").attr("disabled", true);
+                                $("#register-btn").attr("disabled", true);
                             }else {
                                 $('#emailError').hide();
-                                $("#refister-btn").attr("disabled", false);
+                                $("#register-btn").attr("disabled", false);
                             }
 
                         }
